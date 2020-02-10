@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :weapons, only: [:index]
   resources :supplies, only: [:index]
 
+  root 'application#welcome'
+
+
 end
