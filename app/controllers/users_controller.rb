@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         if @user.valid?
             @user.save
         else
-            redirect_to :new
+            render :new
         end
     end
 
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     private
     
     def user_params
-        params.require(:user).permit(:name, :group)
+        params.require(:user).permit(:name, :group_id)
     end
 
 end
