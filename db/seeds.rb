@@ -11,7 +11,7 @@ Supply.destroy_all
 Weapon.destroy_all
 OwnedItem.destroy_all
 
-10.times { Group.create(name: Faker::Games::Witcher.location) }
+10.times { Group.create(name: Faker::Games::Witcher.unique.location) }
 
 100.times { User.create(name: Faker::FunnyName.name, group_id: Group.all.sample.id) }
 
