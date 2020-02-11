@@ -1,8 +1,6 @@
-<h1>Supplies Index</h1>
+<h1>All the Stuff</h1>
 <ul>
-    <% @supplies.each do |supplies| %> 
-    <li>
-        <%= supplies.name %>
-    </li>
+    <% @supplies.each do |supply| %> 
+    <li><%= link_to supply.name, supply_path(supply) %></li>
     <%end%>
 </ul>

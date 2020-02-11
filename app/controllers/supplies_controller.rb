@@ -4,6 +4,10 @@ class SuppliesController < ApplicationController
         @supplies = Supply.all
     end
 
+    def show 
+        @supply = Supply.find(params[:id])
+    end 
+
 
 end
 
