@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_001343) do
+ActiveRecord::Schema.define(version: 2020_02_11_193438) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
-    t.integer "readiness_score"
   end
 
   create_table "owned_items", force: :cascade do |t|
