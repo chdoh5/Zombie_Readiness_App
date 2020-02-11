@@ -1,6 +1,7 @@
 <h1>Directory of Humans</h1>
 <br>
 <p><%= @users.each do |user| %></p>
-<p><%= user.name %></p>
-<p><%= user.group %></p>
+<h3>Name: <%= link_to user.name, user_path(user) %></h3>
+<p>Contingent: <%= link_to user.group.name, user.group %></p>
+<br />
 <% end %>
