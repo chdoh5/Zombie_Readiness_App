@@ -1,0 +1,7 @@
+<h1>Welcome to Zombie Readiness App!</h1>
+
+<h2>Login Here:</h2>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'POST'}) do %> 
+    <input name=name>
+    <input type="submit" value="login">
+    <%end%>
