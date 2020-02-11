@@ -3,4 +3,10 @@
 <h1>@group.name</h1>
 
 Members:
-<%
+<ul>
+<%@group.members.each do |member| %> 
+<li>
+    <%= member.name %>
+</li>
+    <%end%>
+</ul>
