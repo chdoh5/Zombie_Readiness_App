@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :weapons, only: [:index]
   resources :supplies, only: [:index, :show]
 
-  root 'application#welcome'
+  root 'application#hello'
+  get '/login', to: "sessions#new"
+  post '/login', to: "sessions#create"
 
+  post '/logout' => 'sessions#destroy'
 
 end
