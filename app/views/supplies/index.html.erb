@@ -1,1 +1,8 @@
 <h1>Supplies Index</h1>
+<ul>
+    <% @supplies.each do |supplies| %> 
+    <li>
+        <%= supplies.name %>
+    </li>
+    <%end%>
+</ul>
