@@ -3,16 +3,28 @@
 <br />
 <div class="new user">
 <%= form_with model: @user do |f| %>
-<p><% f.label :name %>Your Name&nbsp;</p>
-<h5>(first and last, separated by a space):</h5>
+<p><% f.label :name %>Your Name:</p>
+<h5>(first and last, separated by a space)</h5>
 <p><%= f.text_field :name %></p>
 <br />
 <p><% f.label :group %>Join a faction:</p>
 <p><%= f.collection_select(:group_id, Group.all, :id, :name) %></p>
 <br />
 <p><% f.label :weapon %>Select your weapon:</p>
-<p><%= f.collection_select(:weapon_id, Weapon.all, :id, :name) %></p>
-<br /><br /><br />
+<p><%= f.collection_select(:weapon_ids, @weapons, :id, :name) %></p>
+
+<%# fields_for %>
+<%# supply_ids[]=  %>
+
+<p>HERE BE CHECKBOXES</p>
+<%# create up to 5x @owned_item based on the selection of text boxes in the user creation form %>
+<br />
+<p>
+<%= f.collection_check_boxes(:supply_ids, Supply.all, :id, :name) %>
+</p>
+<br /><br /> 
+
+
 <p><%= f.submit "Create" %></p>
 <% end %>
 </div>
