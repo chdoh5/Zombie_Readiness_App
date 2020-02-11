@@ -11,9 +11,9 @@ Supply.destroy_all
 Weapon.destroy_all
 OwnedItem.destroy_all
 
-10.times { Group.create(name: Faker::Games::Witcher.location) }
+10.times { Group.create(name: Faker::Games::Witcher.unique.location) }
 
-100.times { User.create(name: Faker::FunnyName.name, group_id: Group.all.sample.id) }
+100.times { User.create(name: Faker::FunnyName.unique.name, group_id: Group.all.sample.id) }
 
 Supply.create(name: "Rope", readiness_value: 2)
 Supply.create(name: "Food", readiness_value: 4)
@@ -29,7 +29,7 @@ Supply.create(name: "Robot", readiness_value: 8)
 Supply.create(name: "Soap", readiness_value: 1)
 
 
-100.times { Weapon.create(name: Faker::Games::Pokemon.move, readiness_value: rand(3..10), user_id: User.all.sample.id) }
-10.times { Weapon.create(name: Faker::Games::Pokemon.move, readiness_value: rand(3..10)) }
+100.times { Weapon.create(name: Faker::Games::Pokemon.unique.move, readiness_value: rand(3..10), user_id: User.all.sample.id) }
+10.times { Weapon.create(name: Faker::Games::Pokemon.unique.move, readiness_value: rand(3..10)) }
 
 500.times { OwnedItem.create(user_id: User.all.sample.id, supply_id: Supply.all.sample.id) }

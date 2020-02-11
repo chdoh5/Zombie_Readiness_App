@@ -1,1 +1,15 @@
-<h1>User Show Page</h1>
+<h1><%= @user.name %></h1>
+
+<h2>Clan Name: <%= link_to "#{@user.group.name}", group_path(@user.group) %> </h2>
+
+<ul>
+    <% @user.weapons.each do |weapon| %>
+        <li><%= weapon.name %> <%= weapon.readiness_value %></li>
+    <% end %> 
+</ul>
+<ul>
+    <% @user.owned_items.each do |owneditem| %> 
+        <li> <%= owneditem.supply.name %> <%= owneditem.supply.readiness_value %></li>
+        <%= button_to 'Use Item', owned_item_path(owneditem), method: :delete %>
+    <% end %> 
+</ul>

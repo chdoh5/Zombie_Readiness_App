@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :groups, only: [:index, :show]
   resources :weapons, only: [:index]
   resources :supplies, only: [:index, :show]
+  resources :owned_items, only: [:destroy]
 
   root 'application#hello'
   get '/login', to: "sessions#new"
