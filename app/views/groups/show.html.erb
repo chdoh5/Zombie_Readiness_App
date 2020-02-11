@@ -1,10 +1,10 @@
 <h1>Groups Show Page</h1>
 
-<h1>@group.name</h1>
+<h1><%= @group.name %></h1>
 
 Members:
 <ul>
-<%@group.members.each do |member| %> 
+<%@group.users.each do |member| %> 
 <li>
     <%= member.name %>
 </li>
