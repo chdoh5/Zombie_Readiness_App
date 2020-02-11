@@ -1,15 +1,18 @@
-<h1>Hi! I see that you're new here...</h1>
-<h2>Create a profile below.</h2>
+<h1>Hi, welcome to the apocolypse!</h1>
+<h2>Identify yourself.</h2>
 <br />
 <div class="new user">
 <%= form_with model: @user do |f| %>
-<p><%= f.label :name %></p>
-<br>(first and last, separated by a space)
+<p><% f.label :name %>Your Name&nbsp;</p>
+<h5>(first and last, separated by a space):</h5>
 <p><%= f.text_field :name %></p>
-<br /><br />
-<p><%= f.label :group %></p>
+<br />
+<p><% f.label :group %>Join a faction:</p>
 <p><%= f.collection_select(:group_id, Group.all, :id, :name) %></p>
-<br /><br />
+<br />
+<p><% f.label :weapon %>Select your weapon:</p>
+<p><%= f.collection_select(:weapon_id, Weapon.all, :id, :name) %></p>
+<br /><br /><br />
 <p><%= f.submit "Create" %></p>
 <% end %>
 </div>
