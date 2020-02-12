@@ -1,5 +1,5 @@
 <h1>Welcome to Zombie Readiness App!</h1>
-
+<%= flash[:message] %>
 <h2>Login Here:</h2>
 <!-- <form method='post'>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -7,7 +7,14 @@
     <input type='submit' value='login'>
   </form> -->
 
-  <%= form_tag ({controller: 'sessions', action: 'create', method: 'POST'}) do %> 
+  <!-- <%= form_tag ({controller: 'sessions', action: 'create', method: 'POST'}) do %> 
     <input name=name>
+
     <input type="submit" value="login">
-    <%end%>
+    <%end%> -->
+
+    <%= form_tag '/login' do %>
+        <p>Name: <%= text_field_tag :name %></p>
+        <p>Password: <%= password_field_tag :password %></p>
+        <%= submit_tag "Log In" %>
+        <%end%>
