@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         @user = User.find_by(name: params[:name])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect_to(controller: 'application', action: 'hello')
+            redirect_to(controller: 'application', action: 'hello' )
         else
             flash[:message] = "You Don't Belong Here!"
             redirect_to '/login'

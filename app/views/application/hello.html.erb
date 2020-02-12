@@ -1,8 +1,15 @@
 <h1>Hello <%= current_user.name %></h1>
 
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'POST'}) do %>
+
+<h3>You posess the following: <% current_user.owned_items.each do |owned_item| %></h3>
+<p><%= @supplies.find_by(id: owned_item.supply_id).name.downcase %></p>
+<% end %>
+<% current_user.weapons.each do |weapon| %></h3>
+<p><%= weapon.name %></p>
+<% end %>
+<!--  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'POST'}) do %>
     <input type=submit value='logout'>
-<%end%>
+<%end %>
 
 <!-- <%= button_to "Logout", logout_path, method: :delete %> -->
 

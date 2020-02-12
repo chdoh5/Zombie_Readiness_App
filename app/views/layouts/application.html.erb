@@ -8,11 +8,32 @@
    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+    <style>
+      ul.breadcrumb {
+        padding: 8px 16px;
+        list-style: none;
+        background-color: #eee;
+      }
+
+      ul.breadcrumb li {display: inline;}
+
+      ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+      }
+
+      ul.breadcrumb li a {color: green;}
+    </style>
   </head>
 
   <body>
     <%= yield %>
-
+    <ul class="breadcrumb">
+      <li><%= link_to "humans", users_path if session[:user_id] %></li>
+      <li><%= link_to "contingents", groups_path if session[:user_id] %></li>
+      <li><%= link_to "log out", logout_path, method: :delete if session[:user_id] %></li>
+      <li><%= link_to "your profile", user_path(User.find(session[:user_id])) if session[:user_id] %></li>
+      </ul>
   </body>
 </html>
