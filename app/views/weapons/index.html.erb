@@ -3,5 +3,6 @@
 <ul>
 <% @weapons.each do |weapon| %> 
     <li><%= weapon.name %></li>
+    <%= button_to 'Pick Up Weapon', weapon_path(weapon), method: :put %>
 <% end %> 
 </ul>

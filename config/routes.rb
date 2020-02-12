@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :new, :create, :show]
   resources :groups, only: [:index, :show]
-  resources :weapons, only: [:index]
+  resources :weapons, only: [:index, :update]
   resources :supplies, only: [:index, :show]
   resources :owned_items, only: [:destroy]
 
