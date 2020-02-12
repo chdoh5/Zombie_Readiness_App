@@ -13,7 +13,7 @@ OwnedItem.destroy_all
 
 10.times { Group.create(name: Faker::Games::Witcher.unique.location) }
 
-100.times { User.create(name: Faker::FunnyName.unique.name, group_id: Group.all.sample.id) }
+100.times { User.create(name: Faker::FunnyName.unique.name, group_id: Group.all.sample.id, password: "password") }
 
 Supply.create(name: "Rope", readiness_value: 2)
 Supply.create(name: "Food", readiness_value: 4)
