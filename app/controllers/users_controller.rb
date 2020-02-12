@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        @current_user = session[:name]
         @user = User.find(params[:id])
     end
 
