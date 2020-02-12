@@ -18,6 +18,17 @@
     font-family: 'trueLies';
     src: url('true_lies.ttf');
  }
- #trueLiesFont {
+#trueLiesFont{
      font-family: 'trueLies';
- }
+     font-size: 50px;
+}
+@font-face {
+    font-family: 'digitalTechFont';
+    src: url('Digital_tech.otf');
+    font-color: white;
+}
+*{
+    font-family: 'digitalTechFont';
+  
+}
+
