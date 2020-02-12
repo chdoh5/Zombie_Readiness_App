@@ -7,6 +7,8 @@
 <h5>(first and last, separated by a space)</h5>
 <p><%= f.text_field :name %></p>
 <br />
+<p><% f.label :password %>Password: </p>
+<p><%= f.password_field :password %></p>
 <p><% f.label :group %>Join a Contingent:</p>
 <p><%= f.collection_select(:group_id, Group.all, :id, :name) %></p>
 <br />

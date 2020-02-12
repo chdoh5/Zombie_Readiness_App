@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
 
     def require_login
        
-        return head(:forbidden) unless session.include? :name
+        return head(:forbidden) unless session.include? :user_id
     end
 
 
