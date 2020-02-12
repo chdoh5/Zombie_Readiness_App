@@ -12,6 +12,9 @@
 
 <br />
 <h3>In use:</h3>
+<%= paginate @taken_weapons %>
+<br>
+<br>
 <% @taken_weapons.each do |weapon| %> 
     <li>
     <%= weapon.name %><br>
@@ -21,3 +24,5 @@
     <br />
 <% end %> 
 </ul>
+<%= paginate @taken_weapons %>
+<br>

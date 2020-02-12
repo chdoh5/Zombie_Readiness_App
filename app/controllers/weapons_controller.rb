@@ -2,7 +2,8 @@ class WeaponsController < ApplicationController
 
     def index 
         @weapons = Weapon.all.select {|weapon| weapon.user_id == nil }
-        @taken_weapons = Weapon.all.select {|weapon| weapon.user_id != nil }
+        @taken = Weapon.all.select {|weapon| weapon.user_id != nil }
+        @taken_weapons = Kaminari.paginate_array(@taken).page(params[:page]).per(10)
     end
 
     def update
