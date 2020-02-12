@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+    font-family: 'trueLies';
+    src: url('true_lies.ttf');
+ }
+ #trueLiesFont {
+     font-family: 'trueLies';
+ }

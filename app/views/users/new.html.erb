@@ -2,7 +2,7 @@
 <h2>Identify yourself.</h2>
 <br />
 <div class="new user">
-<%= form_with model: @user do |f| %>
+<%= form_for @user do |f| %>
 <p><% f.label :name %>Your Name:</p>
 <h5>(first and last, separated by a space)</h5>
 <p><%= f.text_field :name %></p>
