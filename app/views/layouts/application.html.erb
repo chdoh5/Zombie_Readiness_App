@@ -28,12 +28,22 @@
   </head>
 
   <body>
+    <ul class="breadcrumb">
+        <li><%= link_to "humans", users_path if session[:user_id] %></li>
+        <li><%= link_to "contingents", groups_path if session[:user_id] %></li>
+        <li><%= link_to "weapons", weapons_path if session[:user_id] %></li>
+        <li><%= link_to "supplies", supplies_path if session[:user_id] %></li>
+        <li><%= link_to "your profile", user_path(User.find(session[:user_id])) if session[:user_id] %></li>
+        <li><%= link_to "log out", logout_path, method: :delete if session[:user_id] %></li>
+    </ul>
     <%= yield %>
     <ul class="breadcrumb">
       <li><%= link_to "humans", users_path if session[:user_id] %></li>
       <li><%= link_to "contingents", groups_path if session[:user_id] %></li>
-      <li><%= link_to "log out", logout_path, method: :delete if session[:user_id] %></li>
+      <li><%= link_to "weapons", weapons_path if session[:user_id] %></li>
+      <li><%= link_to "supplies", supplies_path if session[:user_id] %></li>
       <li><%= link_to "your profile", user_path(User.find(session[:user_id])) if session[:user_id] %></li>
-      </ul>
+      <li><%= link_to "log out", logout_path, method: :delete if session[:user_id] %></li>
+  </ul>
   </body>
 </html>
