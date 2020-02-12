@@ -2,7 +2,7 @@
 
 <h2>Contingent: <%= link_to "#{@user.group.name}", group_path(@user.group) %> </h2>
 
-
+<% if session[:user_id] == @user.id %>
 <h4><br>Weapons currently in posession:</h4>
 <ul>
     <% @user.weapons.each do |weapon| %>
@@ -19,7 +19,7 @@
 </ul>
 
 
-<% if session == @user.id %>
+
 <% end %> 
 
 <%= link_to "all humans", users_path %>
