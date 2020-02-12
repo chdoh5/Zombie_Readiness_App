@@ -2,14 +2,24 @@
 
 <h2>Contingent: <%= link_to "#{@user.group.name}", group_path(@user.group) %> </h2>
 
+
+<h4><br>Weapons currently in posession:</h4>
 <ul>
     <% @user.weapons.each do |weapon| %>
-        <li><%= weapon.name %> <%= weapon.readiness_value %></li>
+        <li><%= weapon.name %> (readiness: <%= weapon.readiness_value %>)</li><br>
     <% end %> 
 </ul>
+
+<h4>Supplies owned:</h4>
 <ul>
     <% @user.owned_items.each do |owneditem| %> 
-        <li> <%= owneditem.supply.name %> <%= owneditem.supply.readiness_value %></li>
-        <%= button_to 'Use Item', owned_item_path(owneditem), method: :delete %>
+        <li> <%= owneditem.supply.name %> (readiness: <%= owneditem.supply.readiness_value %>)</li>
+        <%= button_to 'Use Item', owned_item_path(owneditem), method: :delete %><br>
     <% end %> 
 </ul>
+
+
+<!-- <% if @current_user == @user.name %> -->
+<!-- <% end %>  -->
+
+<%= link_to "all humans", users_path %>
