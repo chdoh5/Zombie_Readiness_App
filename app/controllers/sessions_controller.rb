@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
     before_action :authorize!, except: [:new, :create]
 
     def new
-        if session[:name] 
+        if session[:user_id] 
+            p session[:user_id]
             redirect_to '/'
         end
 
@@ -13,7 +14,7 @@ class SessionsController < ApplicationController
         @user = User.find_by(name: params[:name])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to(controller: 'application', action: 'hello')
         else
             flash[:message] = "You Don't Belong Here!"
             redirect_to '/login'
@@ -27,8 +28,9 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        session.delete :name
-        redirect_to '/'
+        
+        session.delete :user_id
+        redirect_to '/login'
     end
         
 
