@@ -1,6 +1,6 @@
 <h1><%= @user.name %></h1>
 
-<h2>Clan Name: <%= link_to "#{@user.group.name}", group_path(@user.group) %> </h2>
+<h2>Contingent: <%= link_to "#{@user.group.name}", group_path(@user.group) %> </h2>
 
 <ul>
     <% @user.weapons.each do |weapon| %>
