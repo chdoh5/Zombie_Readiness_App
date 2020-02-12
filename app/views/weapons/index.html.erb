@@ -3,12 +3,11 @@
 <ul>
 <h2>Available:</h2>
 <% @weapons.each do |weapon| %> 
-    <li><%= weapon.name %></li>
-    <%= button_to 'Pick Up Weapon', weapon_path(weapon), method: :put %>
     <li>
-        <%= weapon.name %><br>
+        <%= weapon.name %> <br>
         readiness value: <%= weapon.readiness_value %>
     </li>
+    <%= button_to 'Pick Up Weapon', weapon_path(weapon), method: :put %>
     <br />
 <% end %> 
 
