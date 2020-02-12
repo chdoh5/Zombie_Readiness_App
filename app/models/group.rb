@@ -4,6 +4,9 @@ class Group < ApplicationRecord
 	has_many :owned_items, through: :users
 	has_many :supplies, through: :owned_items
 
+	validates :name, presence: true
+	validates :name, uniqueness: true
+
 	def readiness
 		supply_score + weapon_score
 	end 
