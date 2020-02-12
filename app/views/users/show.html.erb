@@ -19,7 +19,7 @@
 </ul>
 
 
-<!-- <% if @current_user == @user.name %> -->
-<!-- <% end %>  -->
+<% if session == @user.id %>
+<% end %> 
 
 <%= link_to "all humans", users_path %>
