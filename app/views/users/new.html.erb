@@ -7,7 +7,7 @@
 <h5>(first and last, separated by a space)</h5>
 <p><%= f.text_field :name %></p>
 <br />
-<p><% f.label :group %>Join a faction:</p>
+<p><% f.label :group %>Join a Contingent:</p>
 <p><%= f.collection_select(:group_id, Group.all, :id, :name) %></p>
 <br />
 <p><% f.label :weapon %>Select your weapon:</p>
