@@ -21,14 +21,18 @@
 #trueLiesFont{
      font-family: 'trueLies';
      font-size: 50px;
+     color: limegreen;
 }
 @font-face {
     font-family: 'digitalTechFont';
     src: url('Digital_tech.otf');
-    font-color: white;
+    
 }
 *{
     font-family: 'digitalTechFont';
-  
+    /* color: whitesmoke;
+    background-color: rgb(44, 39, 39) */
+
 }
+
 
