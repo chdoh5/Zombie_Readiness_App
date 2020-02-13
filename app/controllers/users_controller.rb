@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        @supplies = Supply.all
         @weapons = Weapon.all.select {|weapon| weapon.user_id == nil}
     end
 
@@ -24,7 +23,8 @@ class UsersController < ApplicationController
             redirect_to user_path(@user)
             # @owned_item = OwnedItem.new(user_id: @user.id, supply_id: params[:id])
         else
-            render :new
+            @weapons = Weapon.all.select {|weapon| weapon.user_id == nil}
+            render :new   
         end
     end
 

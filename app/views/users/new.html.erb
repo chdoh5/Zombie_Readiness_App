@@ -1,5 +1,13 @@
 <h1>Hi, welcome to the apocolypse!</h1>
 <h2>Identify yourself.</h2>
+
+<% if @user.errors %> 
+    <ul>
+        <% @user.errors.full_messages.each do |error| %> 
+        <li><%= error %></li>
+        <% end %> 
+    </ul>
+<% end %> 
 <br />
 <div class="new user">
 <%= form_for @user do |f| %>
