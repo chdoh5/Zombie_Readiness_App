@@ -1,5 +1,6 @@
 <h1>Hello <%= current_user.name %></h1>
-
+<% range = (1..14).to_a %>
+<%=image_tag("test_#{range.sample}.png")%>
 
 <h3>You posess the following: <% current_user.owned_items.each do |owned_item| %></h3>
 <p><%= @supplies.find_by(id: owned_item.supply_id).name.downcase %></p>

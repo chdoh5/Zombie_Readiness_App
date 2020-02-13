@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ @import "semantic-ui-rails";
+
  @font-face {
     font-family: 'trueLies';
     src: url('true_lies.ttf');
@@ -30,9 +32,13 @@
 }
 *{
     font-family: 'digitalTechFont';
-    /* color: whitesmoke;
-    background-color: rgb(44, 39, 39) */
-
+    
 }
 
+#loginPage{
+    
+    color: white;
+    background-color: black;
+    
+}
 

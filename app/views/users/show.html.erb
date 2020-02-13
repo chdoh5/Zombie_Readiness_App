@@ -1,4 +1,7 @@
 <h1><%= @user.name %></h1>
+<% range = (1..14).to_a %>
+<%=image_tag("test_#{range.sample}.png")%>
+
 
 <h2>Contingent: <%= link_to "#{@user.group.name}", group_path(@user.group) %> </h2>
 
@@ -17,6 +20,7 @@
         <%= button_to 'Use Item', owned_item_path(owneditem), method: :delete %><br>
     <% end %> 
 </ul>
+
 
 
 
