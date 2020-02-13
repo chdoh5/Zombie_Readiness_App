@@ -28,6 +28,8 @@
   </head>
 
   <body>
+    
+    <% if !!session[:user_id] %>
     <ul class="breadcrumb">
         <li><%= link_to "humans", users_path if session[:user_id] %></li>
         <li><%= link_to "contingents", groups_path if session[:user_id] %></li>
@@ -36,7 +38,11 @@
         <li><%= link_to "your profile", user_path(User.find(session[:user_id])) if session[:user_id] %></li>
         <li><%= link_to "log out", logout_path, method: :delete if session[:user_id] %></li>
     </ul>
+    <%end%>
+
     <%= yield %>
+
+    <% if !!session[:user_id] %>
     <ul class="breadcrumb">
       <li><%= link_to "humans", users_path if session[:user_id] %></li>
       <li><%= link_to "contingents", groups_path if session[:user_id] %></li>
@@ -45,5 +51,7 @@
       <li><%= link_to "your profile", user_path(User.find(session[:user_id])) if session[:user_id] %></li>
       <li><%= link_to "log out", logout_path, method: :delete if session[:user_id] %></li>
   </ul>
+  <%end%>
+  
   </body>
 </html>
