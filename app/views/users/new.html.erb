@@ -9,21 +9,15 @@
 <br />
 <p><% f.label :password %>Password: </p>
 <p><%= f.password_field :password %></p>
+<br />
 <p><% f.label :group %>Join a Contingent:</p>
 <p><%= f.collection_select(:group_id, Group.all, :id, :name) %></p>
 <br />
 <p><% f.label :weapon %>Select your weapon:</p>
 <p><%= f.collection_select(:weapon_ids, @weapons, :id, :name) %></p>
-
-<%# fields_for %>
-<%# supply_ids[]=  %>
-
-<p>HERE BE CHECKBOXES</p>
-<%# create up to 5x @owned_item based on the selection of text boxes in the user creation form %>
 <br />
-<p>
-<%= f.collection_check_boxes(:supply_ids, Supply.all, :id, :name) %>
-</p>
+<p><% f.label :weapon %>Select your supplies:</p>
+<p><%= f.collection_check_boxes(:supply_ids, Supply.all, :id, :name) %></p>
 <br /><br /> 
 
 
