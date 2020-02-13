@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :weapons, only: [:index, :update]
   resources :supplies, only: [:index, :show]
   resources :owned_items, only: [:destroy]
-
+  
+  get '/zombie', to: 'users#edit'
   root 'application#hello'
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
